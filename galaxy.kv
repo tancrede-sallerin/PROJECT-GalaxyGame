@@ -1,0 +1,32 @@
+#:import menu menu
+
+MainWidget:
+
+
+<MainWidget>:
+    canvas.before:
+        Rectangle:
+            size: self.size
+            source: 'images/bg1.jpg'
+    menu_widget: menu_widget
+    perspective_point_x: self.width/2
+    perspective_point_y: self.height * 0.75
+    Label:
+        pos_hint: { "center_x": .5, "center_y": .15 }
+        size_hint: None, None            # Parce que dans un BoxLayout, truc du dessous ne marche pas sinon
+        size: 240,150
+        canvas.after:
+            Rectangle:
+                source: "images/spaceshipXX.png"	# source:     pour faire un rectangle à partir d’une image, ici un rectangle orange à bord arrondi
+                pos: self.pos
+                size: self.size
+    MenuWidget:
+        id: menu_widget
+    Label:
+        text: root.score_txt
+        font_size: dp(20)
+        font_name: 'fonts/Eurostile.ttf'
+        pos_hint: {"x": 0, "top": 1}
+        size_hint: .18, .18
+
+

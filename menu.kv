@@ -1,0 +1,38 @@
+
+<MenuWidget>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, .8
+        Rectangle:
+            size: self.size
+    Label:
+        font_size: dp(60)
+        font_name: 'fonts/Sackers-Gothic-Std-Light.ttf'
+        text: root.parent.menu_title
+        pos_hint: { "center_x": .5, "center_y": .6 }
+    Label:
+        pos_hint: { "center_x": .5, "center_y": .3 }
+        size_hint: None, None            # Parce que dans un BoxLayout, truc du dessous ne marche pas sinon
+        size: 295,115
+        canvas.before:
+            Rectangle:
+                source: "images/bouton_fond.png"	# source:     pour faire un rectangle à partir d’une image, ici un rectangle orange à bord arrondi
+                pos: self.pos
+                size: self.size
+    Button:
+        font_size: dp(30)
+        font_name: 'fonts/Eurostile.ttf'
+        text: root.parent.menu_button_title
+        pos_hint: { "center_x": .5, "center_y": .3 }
+        size_hint: .2, .15
+        on_press: root.parent.on_menu_button_pressed()
+        background_normal: ''  # pour pas que la couleur du dessous se mélange avec le fond gris de base du bouton
+        background_color: 0, 0, 0, 0
+
+
+
+
+
+
+
+
